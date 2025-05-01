@@ -1,27 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Music Playlist Explorer</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <!-- Your header content here -->
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <main> 
-        <!-- Your main content here -->
+    <title>Music Playlist Explorer</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>Music Playlist Explorer</header>
+
+    <main>
+      <div class="modal">
+        <div class="modal-body">
+          <h2>Playlist Title</h2>
+          <h3>Creator Name</h3>
+          <div class="list-item">
+            <img src="./assets/img/playlist.png" />
+            <div class="details">
+              <h4>Songe Title</h4>
+              <p>Artist name</p>
+              <p>Album name</p>
+            </div>
+            <p>0:00</p>
+          </div>
+          <div class="list-item">
+            <img src="./assets/img/playlist.png" />
+            <div class="details">
+              <h4>Songe Title</h4>
+              <p>Artist name</p>
+              <p>Album name</p>
+            </div>
+            <p>0:00</p>
+          </div>
+        </div>
+      </div>
+      <div class="playlist-cards">
+        <h2>Cards here</h2>
+        <div class="card">
+          <img src="./assets/img/song.png" />
+          <h3 class="card-title">playlist title</h3>
+          <h4 class="card-details">creator name</h4>
+          <div>more stuff</div>
+        </div>
+      </div>
     </main>
 
-    <footer>
-        <!-- Your footer content here -->
-    </footer>
+    <footer>Footer here</footer>
     <script src="data/data.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
