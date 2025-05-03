@@ -1,17 +1,21 @@
-📝 `NOTE` Use this template to initialize the contents of a README.md file for
-your application. As you work on your assignment over the course of the week,
-update the required or stretch features lists to indicate which features you
-have completed by changing `[ ]` to `[x]`. (🚫 Remove this paragraph before
-submitting your assignment.)
-
 ## Unit Assignment: Music Playlist Explorer
 
-Submitted by: **NAME**
+Submitted by: **Virsaviya Efraim**
 
-Estimated time spent: **#** hours spent in total
+Estimated time spent: **5-6** hours spent in total
 
 Deployed Application (**required**):
-[Music Playlist Explorer Deployed Site](ADD_LINK_HERE)
+[Music Playlist Explorer Deployed Site](https://www.loom.com/share/fcd4728723d9473c9ffae81e4e9f6c1b?sid=5f4e129d-6a29-49c9-9273-820d7af67557)
+
+<div style="position: relative; padding-bottom: 61.016949152542374%; height: 0;">
+  <iframe
+    src="https://www.loom.com/embed/fcd4728723d9473c9ffae81e4e9f6c1b?sid=feb8e3fe-b750-4147-a757-d293c21c0e57"
+    frameborder="0"
+    webkitallowfullscreen
+    mozallowfullscreen
+    allowfullscreen style="position: absolute; top: 0; left: 0; width: 100% height: 100%;">
+  </iframe>
+</div>
 
 ### Application Features
 
