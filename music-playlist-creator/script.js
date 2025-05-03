@@ -1,3 +1,102 @@
+/**
+ * HANDLERS
+ */
+
+const handleLike = (id) => {
+  const playlists = JSON.parse(localStorage.getItem('playlists'));
+  const playlist = playlists[id];
+
+  const parent = document.querySelector(`[data-id="${id}"]`);
+  const count = parent.querySelector('.likes span');
+  const iconFilled = parent.querySelector('i.fa-solid');
+  const iconOutline = parent.querySelector('i.fa-regular');
+
+  const updatedLiked = !playlist.liked;
+  const updatedLikes = updatedLiked ? playlist.likes + 1 : playlist.likes - 1;
+  if (updatedLiked) {
+    iconFilled.classList.remove('hidden');
+    iconOutline.classList.add('hidden');
+  } else {
+    iconFilled.classList.add('hidden');
+    iconOutline.classList.remove('hidden');
+  }
+  count.textContent = updatedLikes;
+
+  const updatedPlaylist = {
+    ...playlist,
+    liked: updatedLiked,
+    likes: updatedLikes,
+  };
+  const updatedPlaylists = {
+    ...playlists,
+    [id]: updatedPlaylist,
+  };
+  localStorage.setItem('playlists', JSON.stringify(updatedPlaylists));
+};
+
+const toggleLikeFill = (parent, liked) => {
+  const iconFilled = parent.querySelector('i.fa-solid');
+  const iconOutline = parent.querySelector('i.fa-regular');
+
+  if (liked) {
+    iconFilled.classList.add('hidden');
+    iconOutline.classList.remove('hidden');
+  } else {
+    iconFilled.classList.remove('hidden');
+    iconOutline.classList.add('hidden');
+  }
+};
+
+const handlePlaylistClick = (id) => {
+  document.body.style.overflow = 'hidden';
+  createModal(id);
+};
+
+// closes modal on X click, overlay click, or esc keypress
+const handleCloseModal = (e) => {
+  if (e?.target.matches('#modal-container, .close') || e?.key === 'Escape') {
+    const modal = document.getElementById('modal-container');
+    modal.innerHTML = '';
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+  document.removeEventListener('keydown', handleCloseModal);
+};
+
+const handlePlaylistCoverClick = (id) => {
+  window.open(`https://open.spotify.com/playlist/${id}`, '_blank');
+};
+
+const shufflePlaylist = (id) => {
+  const playlist = JSON.parse(localStorage.getItem('playlists'))[id];
+
+  const tracks = [...playlist.tracks];
+  let currIdx = tracks.length;
+  while (currIdx != 0) {
+    let randomIdx = Math.floor(Math.random() * currIdx);
+    currIdx--;
+    [tracks[currIdx], tracks[randomIdx]] = [tracks[randomIdx], tracks[currIdx]];
+  }
+
+  const playlists = JSON.parse(localStorage.getItem('playlists'));
+  const updatedPlaylist = { ...playlist, tracks };
+  const updatedPlaylists = {
+    ...playlists,
+    [playlist.id]: updatedPlaylist,
+  };
+  localStorage.setItem('playlists', JSON.stringify(updatedPlaylists));
+
+  const body = createModalBody(id);
+  const modal = document.querySelector('#modal-container .modal');
+  const list = document.querySelector('#modal-container .body');
+  list.remove();
+  modal.appendChild(body);
+};
+
+/**
+ * COMPONENTS
+ */
+
 const createTrackCard = (track) => {
   const card = document.createElement('div');
   const img = document.createElement('img');
@@ -51,12 +150,17 @@ const createModalHeader = (id) => {
   header.className = 'header';
   close.className = 'close';
   close.textContent = '🆇';
+  close.addEventListener('click', handleCloseModal);
   playlistCover.className = 'playlist-cover';
+  playlistCover.addEventListener('click', () =>
+    handlePlaylistCoverClick(playlist.id),
+  );
   img.src = playlist.img;
   details.className = 'details';
   name.textContent = playlist.name;
   creator.textContent = `Created by ${playlist.creator}`;
   shuffleIcon.className = 'fa-solid fa-shuffle';
+  shuffle.addEventListener('click', () => shufflePlaylist(id));
 
   playlistCover.appendChild(img);
   shuffle.appendChild(shuffleIcon);
@@ -102,6 +206,8 @@ const createModal = (id) => {
   modal.appendChild(header);
   modal.appendChild(body);
 
+  document.addEventListener('keydown', handleCloseModal);
+  container.addEventListener('click', handleCloseModal);
   container.classList.remove('hidden');
   container.appendChild(modal);
 };
@@ -121,6 +227,9 @@ const createLikeButton = (id) => {
     playlist.liked ? 'hidden' : ''
   }`;
 
+  btn.addEventListener('click', () => handleLike(playlist.id));
+  // btn.addEventListener('mouseenter', () => toggleLikeFill(btn, playlist.liked));
+  // btn.addEventListener('mouseleave', () => toggleLikeFill(btn, playlist.liked));
   btn.appendChild(iconFilled);
   btn.appendChild(iconOutline);
   likes.appendChild(btn);
@@ -141,6 +250,7 @@ const createPlaylistCard = (id) => {
   card.className = 'card';
   card.dataset.id = playlist.id;
   img.src = playlist.img;
+  img.addEventListener('click', () => handlePlaylistClick(id));
   name.textContent = playlist.name;
   details.className = 'details';
   creator.textContent = `by ${playlist.creator}`;
