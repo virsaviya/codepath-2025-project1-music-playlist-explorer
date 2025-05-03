@@ -5,51 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Music Playlist Explorer</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-...long-hash..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico" />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <header>Music Playlist Explorer</header>
 
     <main>
-      <div class="modal">
-        <div class="modal-body">
-          <h2>Playlist Title</h2>
-          <h3>Creator Name</h3>
-          <div class="list-item">
-            <img src="./assets/img/playlist.png" />
-            <div class="details">
-              <h4>Songe Title</h4>
-              <p>Artist name</p>
-              <p>Album name</p>
-            </div>
-            <p>0:00</p>
-          </div>
-          <div class="list-item">
-            <img src="./assets/img/playlist.png" />
-            <div class="details">
-              <h4>Songe Title</h4>
-              <p>Artist name</p>
-              <p>Album name</p>
-            </div>
-            <p>0:00</p>
-          </div>
-        </div>
-      </div>
-      <div class="playlist-cards">
-        <h2>Cards here</h2>
-        <div class="card">
-          <img src="./assets/img/song.png" />
-          <h3 class="card-title">playlist title</h3>
-          <h4 class="card-details">creator name</h4>
-          <div>more stuff</div>
-        </div>
-      </div>
+      <div id="modal-container" class="hidden"></div>
+      <div id="playlists"></div>
     </main>
 
-    <footer>Footer here</footer>
-    <script src="data/data.js"></script>
-    <script src="script.js"></script>
+    <footer>Made with love 🩷</footer>
+    <script src="data.js" type="module"></script>
+    <script src="script.js" type="module"></script>
   </body>
 </html>

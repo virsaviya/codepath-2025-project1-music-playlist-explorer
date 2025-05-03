@@ -103,7 +103,6 @@ const createTrackCard = (track) => {
   const details = document.createElement('div');
   const name = document.createElement('a');
   const artist = document.createElement('a');
-  // const album = document.createElement('a');
   const duration = document.createElement('p');
 
   card.className = 'card';
@@ -117,14 +116,10 @@ const createTrackCard = (track) => {
   artist.textContent = track.artistName;
   artist.href = `https://open.spotify.com/artist/${track.artistId}`;
   artist.target = '_blank';
-  // album.textContent = track.albumName;
-  // album.href = `https://open.spotify.com/album/${track.albumId}`;
-  // album.target = '_blank';
   duration.textContent = parseDuration(track.duration);
 
   details.appendChild(name);
   details.appendChild(artist);
-  // details.appendChild(album);
   details.appendChild(duration);
 
   card.appendChild(img);
@@ -228,8 +223,6 @@ const createLikeButton = (id) => {
   }`;
 
   btn.addEventListener('click', () => handleLike(playlist.id));
-  // btn.addEventListener('mouseenter', () => toggleLikeFill(btn, playlist.liked));
-  // btn.addEventListener('mouseleave', () => toggleLikeFill(btn, playlist.liked));
   btn.appendChild(iconFilled);
   btn.appendChild(iconOutline);
   likes.appendChild(btn);
