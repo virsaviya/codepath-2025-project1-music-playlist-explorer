@@ -1,5 +1,5 @@
 const spotifyCredentials =
-  'd42c32bfbc714f54be3b7092619305f4:e1637f428d3c4330aadcbe6e140feea0';
+  'foo';
 const valiantThePink = '4FVHIoKmyPrqXezg0vjjPD';
 const jon = '121615874';
 
