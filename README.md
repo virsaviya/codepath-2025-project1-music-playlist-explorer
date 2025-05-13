@@ -5,11 +5,11 @@ Submitted by: **Virsaviya Efraim**
 Estimated time spent: **5-6** hours spent in total
 
 Deployed Application (**required**):
-[Music Playlist Explorer Deployed Site](https://www.loom.com/share/fcd4728723d9473c9ffae81e4e9f6c1b?sid=5f4e129d-6a29-49c9-9273-820d7af67557)
+[Music Playlist Explorer Deployed Site](https://codepath-2025-project1-music-playlist.onrender.com/)
 
 <div style="position: relative; padding-bottom: 61.016949152542374%; height: 0;">
   <iframe
-    src="https://www.loom.com/embed/fcd4728723d9473c9ffae81e4e9f6c1b?sid=feb8e3fe-b750-4147-a757-d293c21c0e57"
+    src=""
     frameborder="0"
     webkitallowfullscreen
     mozallowfullscreen
@@ -18,6 +18,10 @@ Deployed Application (**required**):
 </div>
 
 ### Application Features
+
+### Walkthrough Video
+
+[Loom video](https://www.loom.com/embed/fcd4728723d9473c9ffae81e4e9f6c1b?sid=feb8e3fe-b750-4147-a757-d293c21c0e57)
 
 #### CORE FEATURES
 
@@ -155,18 +159,6 @@ Deployed Application (**required**):
     - [ ] Date added (most recent to oldest, chronologically)
   - [ ] Selecting a sort option should result in a reordering based on the
         selected sort while maintaining a grid view.
-
-### Walkthrough Video
-
-`TODO://` Add the embedded URL code to your animated app walkthrough below,
-`ADD_EMBEDDED_CODE_HERE`. Make sure the video actually renders and is playable
-when viewing this README. Ensure your walkthrough showcases the presence and/or
-functionality of all features you implemented above (check them off as you
-film!). Pay attention to any **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**
-checkboxes listed above to ensure graders see the full functionality of your
-website! (🚫 Remove this paragraph after adding walkthrough video)
-
-`ADD_EMBEDDED_CODE_HERE`
 
 ### Reflection
 
